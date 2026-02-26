@@ -107,7 +107,13 @@ public class WallInteractor : MonoBehaviour
         }
         else if(_collisionData.wallType == WallType.Bouncy)
         {
+            _desiredJump = true;
             // Implement bouncy wall behavior
+        }
+        else if(_collisionData.wallType == WallType.Unjumpable)
+        {
+            _desiredJump = false; // Prevent jumping off unjumpable walls
+            _wallSlideMaxSpeed = 3f; // Example: Increase slide speed for unjumpable walls
         }
         else
         {

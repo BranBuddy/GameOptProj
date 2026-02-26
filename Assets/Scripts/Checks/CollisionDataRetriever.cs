@@ -77,6 +77,11 @@ public class CollisionDataRetriever : MonoBehaviour
             // Implement bouncy wall behavior
             return WallType.Bouncy;
         }
+        else if(collision.gameObject.CompareTag("UnjumpableWall"))
+        {
+            // Implement unjumpable wall behavior
+            return WallType.Unjumpable;
+        }
         return WallType.None;
     }
 
@@ -127,5 +132,6 @@ public enum WallType
 {
     None,
     Sticky,
-    Bouncy
+    Bouncy,
+    Unjumpable
 }
