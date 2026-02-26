@@ -67,6 +67,8 @@ public class WallInteractor : MonoBehaviour
 
         if(_onWall)
         {
+            ChangeWallPropertyBasedOnType();
+
             if(_velocity.y < -_wallSlideMaxSpeed)
             {
                 _velocity.y = -_wallSlideMaxSpeed;
@@ -95,6 +97,22 @@ public class WallInteractor : MonoBehaviour
         }
 
         _body.linearVelocity = _velocity;
+    }
+
+    private void ChangeWallPropertyBasedOnType()
+    {
+        if(_collisionData.wallType == WallType.Sticky)
+        {
+            _wallSlideMaxSpeed = 0.5f; // Example: Increase stick time for sticky walls
+        }
+        else if(_collisionData.wallType == WallType.Bouncy)
+        {
+            // Implement bouncy wall behavior
+        }
+        else
+        {
+            _wallSlideMaxSpeed = 2f; // Reset to default for non-sticky walls
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

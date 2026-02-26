@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - StickyWall
+  - BouncyWall
   layers:
   - Default
   - TransparentFX
@@ -11,10 +13,10 @@ TagManager:
   - Platform
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Slope
+  - UnJumpable
+  - StickyWall
+  - BouncyWall
   - 
   - 
   - 
