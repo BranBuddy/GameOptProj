@@ -25,12 +25,27 @@ public class PlayerController : InputController
         inputActions.Disable();
     }
 
+    public override bool RetrieveRestartInput(GameObject gameObject)
+    {
+        return inputActions.Player.Restart.triggered;
+    }
 
     public override float RetrieveMovementInput(GameObject gameObject)
     {
         // Assuming you have a "Move" action set up as a Vector2
         Vector2 move = inputActions.Player.Move.ReadValue<Vector2>();
         return move.x;
+    }
+
+    public override float RetrieveVerticalInput(GameObject gameObject)
+    {
+        Vector2 move = inputActions.Player.Move.ReadValue<Vector2>();
+        return move.y;
+    }
+
+    public override bool RetrieveDashInput(GameObject gameObject)
+    {
+        return inputActions.Player.Dash.triggered;
     }
 
     public override bool RetrieveJumpInput(GameObject gameObject)

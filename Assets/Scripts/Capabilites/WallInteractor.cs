@@ -107,8 +107,10 @@ public class WallInteractor : MonoBehaviour
         }
         else if(_collisionData.wallType == WallType.Bouncy)
         {
+            Vector2 oldWallJumpBounce = _wallJumpBounce;
+            _wallJumpBounce = new Vector2(oldWallJumpBounce.x * 2.5f, oldWallJumpBounce.y * 2.5f); // Example: Increase jump bounce for bouncy walls
             _desiredJump = true;
-            // Implement bouncy wall behavior
+            _wallJumpBounce = oldWallJumpBounce; // Reset to default after applying bounce effect
         }
         else if(_collisionData.wallType == WallType.Unjumpable)
         {

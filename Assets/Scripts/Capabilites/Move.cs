@@ -26,7 +26,8 @@ public class Move : MonoBehaviour
     void Update()
     {
         _direction.x = _controller.inputController.RetrieveMovementInput(this.gameObject);
-        _desiredVelocity = new Vector2(_direction.x, 0) * Mathf.Max(_maxSpeed - _dataRetriever.GetFriction(), 0f);
+        _direction.y = _controller.inputController.RetrieveVerticalInput(this.gameObject);
+        _desiredVelocity = new Vector2(_direction.x, _direction.y) * Mathf.Max(_maxSpeed - _dataRetriever.GetFriction(), 0f);
     }
 
     private void FixedUpdate()
@@ -37,7 +38,7 @@ public class Move : MonoBehaviour
         _acceleration = _onGround ? _maxAcceleration : _maxAirAcceleration;
         _maxSpeedChange = _acceleration * Time.deltaTime;
         _velocity.x = Mathf.MoveTowards(_velocity.x, _desiredVelocity.x, _maxSpeedChange);
-
+        _velocity.y = Mathf.MoveTowards(_velocity.y, _desiredVelocity.y, _maxSpeedChange);
 
         _body.linearVelocity = _velocity;
     }

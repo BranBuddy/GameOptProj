@@ -17,4 +17,19 @@ public class EmptyController : InputController
     {
         return false;
     }
+
+    public override bool RetrieveRestartInput(GameObject gameObject)
+    {
+        return false;
+    }
+
+    public override bool RetrieveDashInput(GameObject gameObject)
+    {
+        return false;
+    }
+
+    public override float RetrieveVerticalInput(GameObject gameObject)
+    {
+        return 0;
+    }
 }
