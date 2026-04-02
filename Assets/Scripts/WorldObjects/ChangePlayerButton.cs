@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ChangePlayerButton : CollisionInteraction
 {
-    [SerializeField] private GameObject button;
     [SerializeField] private GameObject playerToActivate;
     [SerializeField] private GameObject playerToDeactivate;
     [SerializeField] private EmptyController emptyController;
@@ -15,21 +14,23 @@ public class ChangePlayerButton : CollisionInteraction
     {
         _playerActivateController = playerToActivate.GetComponent<Controller>();
         _playerDeactivateController = playerToDeactivate.GetComponent<Controller>();
+        Debug.Log($"[ChangePlayerButton] Start: ActivateController={_playerActivateController} on {playerToActivate.name}, DeactivateController={_playerDeactivateController} on {playerToDeactivate.name}");
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter2D(Collision2D collision)
     {
+        base.OnCollisionEnter2D(collision);
+        Debug.Log($"[ChangePlayerButton] OnCollisionEnter2D with {collision.collider.name}, tag={collision.collider.tag}");
         if (collision.collider.CompareTag("Player"))
         {
+            Debug.Log($"[ChangePlayerButton] Player collision detected. Enabling {_playerActivateController} on {playerToActivate.name}, disabling {_playerDeactivateController} on {playerToDeactivate.name}.");
             _playerActivateController.enabled = true;
             _playerActivateController.inputController = playerController;
             CameraManager.Instance.UpdateCameraTarget(playerToActivate);
-            
+
             _playerDeactivateController.enabled = false;
             _playerDeactivateController.inputController = emptyController;
-            
-            
         }
     }
 }

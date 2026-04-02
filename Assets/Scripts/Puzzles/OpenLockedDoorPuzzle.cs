@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OpenLockedDoorPuzzle : CollisionInteraction
@@ -5,6 +6,8 @@ public class OpenLockedDoorPuzzle : CollisionInteraction
     public GameObject lockedDoor;
     public Key key;
     private string requiredKeyID;
+
+    public List<GameObject> lockWalls;
 
     private void Start()
     {
@@ -26,6 +29,12 @@ public class OpenLockedDoorPuzzle : CollisionInteraction
             if (PlayerInventory.Instance.items.Contains(requiredKeyID))
             {
                 lockedDoor.SetActive(false); // Open the door by deactivating it
+
+                foreach (GameObject wall in lockWalls)
+                {
+                    wall.SetActive(false); // Deactivate the lock walls
+                }
+                
                 PlayerInventory.Instance.items.Remove(requiredKeyID); // Remove the key from inventory
             }
             else

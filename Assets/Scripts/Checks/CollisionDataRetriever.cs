@@ -113,6 +113,10 @@ public class CollisionDataRetriever : MonoBehaviour
             // Implement unjumpable wall behavior
             return WallType.Unjumpable;
         }
+        else if(collision.gameObject.CompareTag("Wall"))
+        {
+            return WallType.None; // Regular wall with no special properties
+        }
         return WallType.None;
     }
 

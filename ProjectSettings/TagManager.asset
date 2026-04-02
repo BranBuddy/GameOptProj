@@ -9,6 +9,7 @@ TagManager:
   - UnjumpableWall
   - BouncyFloor
   - StickyFloor
+  - Wall
   layers:
   - Default
   - TransparentFX

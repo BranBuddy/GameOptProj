@@ -25,6 +25,12 @@ public class Move : MonoBehaviour
 
     void Update()
     {
+        if (!_controller.enabled)
+        {
+            _direction = Vector2.zero;
+            _desiredVelocity = Vector2.zero;
+            return;
+        }
         _direction.x = _controller.inputController.RetrieveMovementInput(this.gameObject);
         _direction.y = _controller.inputController.RetrieveVerticalInput(this.gameObject);
         _desiredVelocity = new Vector2(_direction.x, _direction.y) * Mathf.Max(_maxSpeed - _dataRetriever.GetFriction(), 0f);
