@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Restart : MonoBehaviour
 {
+    public Vector3 _restartPosition;
+    [SerializeField] private InputActionReference _restartAction;
     private Controller _controller = null;
     private Vector3 _initialPosition;
     private bool _restart;
@@ -10,27 +13,25 @@ public class Restart : MonoBehaviour
     {
         _controller = this.GetComponent<Controller>();
         _initialPosition = this.transform.position;
+        if (_restartPosition != Vector3.zero)
+            _initialPosition = _restartPosition;
     }
 
-    void Update()
+    private void OnEnable()
     {
-        if (_restart |= _controller.inputController.RetrieveRestartInput(this.gameObject))
-        {
-            _restart = true;
-        }
+        _restartAction.action.performed += RestartLevel;
     }
 
-    void FixedUpdate()
+    private void OnDisable()
     {
-        if (_restart)
-        {
-            RestartLevel();
-            _restart = false;
-        }
+        _restartAction.action.performed -= RestartLevel;
     }
 
-    private void RestartLevel()
+    private void RestartLevel(InputAction.CallbackContext context)
     {
-        this.transform.position = _initialPosition;
+        if(!_controller.enabled)
+            return;
+            
+        this.transform.position = _restartPosition != Vector3.zero ? _restartPosition : _initialPosition;
     }
 }

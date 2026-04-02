@@ -101,6 +101,12 @@ public class WallInteractor : MonoBehaviour
 
     private void ChangeWallPropertyBasedOnType()
     {
+        if(_collisionData.wallType == WallType.Unjumpable)
+        {
+            _desiredJump = false; // Prevent jumping off unjumpable walls
+            _wallSlideMaxSpeed = 3f; // Example: Increase slide speed for unjumpable walls
+        }
+
         if(_collisionData.wallType == WallType.Sticky)
         {
             _wallSlideMaxSpeed = 0.5f; // Example: Increase stick time for sticky walls
@@ -111,11 +117,6 @@ public class WallInteractor : MonoBehaviour
             _wallJumpBounce = new Vector2(oldWallJumpBounce.x * 2.5f, oldWallJumpBounce.y * 2.5f); // Example: Increase jump bounce for bouncy walls
             _desiredJump = true;
             _wallJumpBounce = oldWallJumpBounce; // Reset to default after applying bounce effect
-        }
-        else if(_collisionData.wallType == WallType.Unjumpable)
-        {
-            _desiredJump = false; // Prevent jumping off unjumpable walls
-            _wallSlideMaxSpeed = 3f; // Example: Increase slide speed for unjumpable walls
         }
         else
         {
