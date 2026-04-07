@@ -15,7 +15,6 @@ public class Move : MonoBehaviour
 
     private float _maxSpeedChange, _acceleration;
     private bool _onGround;
-
     void Awake()
     {
         _body = GetComponent<Rigidbody2D>();

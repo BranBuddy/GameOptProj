@@ -30,6 +30,11 @@ public class PlayerController : InputController
         return inputActions.Player.Restart.triggered;
     }
 
+    public override bool RetrieveInteractInput(GameObject gameObject)
+    {
+        return inputActions.Player.Interact.triggered;
+    }
+
     public override float RetrieveMovementInput(GameObject gameObject)
     {
         // Assuming you have a "Move" action set up as a Vector2

@@ -29,7 +29,7 @@ public class TriggerInteraction : InteractionManager
                 }
             }
 
-            Destroy(this.gameObject);
+            
         }
     }
 

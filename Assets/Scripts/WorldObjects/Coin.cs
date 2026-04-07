@@ -9,6 +9,7 @@ public class Coin : TriggerInteraction
     {
         base.OnTriggerEnter2D(collision); // Call the base method to handle inventory addition
         GameManager.Instance.IncreaseCoinCount(coinValue);
+        StartCoroutine(DisableThenDestroy(this.gameObject));
     }
 
 }

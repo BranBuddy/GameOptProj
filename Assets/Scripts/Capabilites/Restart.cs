@@ -8,9 +8,11 @@ public class Restart : MonoBehaviour
     private Controller _controller = null;
     private Vector3 _initialPosition;
     private bool _restart;
+    public static Restart instance;
 
     void Awake()
     {
+        instance = this;
         _controller = this.GetComponent<Controller>();
         _initialPosition = this.transform.position;
         if (_restartPosition != Vector3.zero)
@@ -27,11 +29,15 @@ public class Restart : MonoBehaviour
         _restartAction.action.performed -= RestartLevel;
     }
 
-    private void RestartLevel(InputAction.CallbackContext context)
+    public void Reset()
     {
         if(!_controller.enabled)
             return;
-            
         this.transform.position = _restartPosition != Vector3.zero ? _restartPosition : _initialPosition;
+    }
+
+    private void RestartLevel(InputAction.CallbackContext context)
+    {
+        Reset();
     }
 }

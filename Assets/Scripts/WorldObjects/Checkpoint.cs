@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using UnityEngine;
 public class Checkpoint : TriggerInteraction
 {
     private Vector3 _restartPosition;
-
+    [SerializeField] private Sprite spriteToChangeTo;
     public override void Start()
     {
         base.Start();
@@ -23,7 +24,15 @@ public class Checkpoint : TriggerInteraction
 
             Debug.Log($"Checkpoint {triggerID} collected. Restart position updated to {_restartPosition}.");
 
-            StartCoroutine(DisableThenDestroy(this.gameObject));
+            if (spriteToChangeTo != null)
+            {
+                SpriteRenderer spriteRenderer = this.GetComponent<SpriteRenderer>();
+                if (spriteRenderer != null)
+                {
+                    spriteRenderer.sprite = spriteToChangeTo;
+                    Debug.Log($"Checkpoint {triggerID} sprite changed.");
+                }
+            }
         }
     }
 }
