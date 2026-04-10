@@ -1,4 +1,3 @@
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -8,11 +7,14 @@ public class CollisionDataRetriever : MonoBehaviour
     public bool onWall { get; private set; }
     public float friction { get; private set; }
     public WallType wallType { get; private set; }
+    public FloorType floorType { get; private set; }
 
     public Vector2 ContactNormal { get; private set; }
     public List<Vector2> ContactPoints { get; private set; } = new List<Vector2>();
     private PhysicsMaterial2D _material;
     private Rigidbody2D _body;
+
+    public List<Collision2D> _wallCollisions = new List<Collision2D>();
 
     private void Awake()
     {
@@ -23,12 +25,17 @@ public class CollisionDataRetriever : MonoBehaviour
     {
         EvaluteCollision(collision);
         RetrieveFriction(collision);
+
+        if (onWall)
+            _wallCollisions.Add(collision);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         EvaluteCollision(collision);
         RetrieveFriction(collision);
+
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -36,6 +43,11 @@ public class CollisionDataRetriever : MonoBehaviour
         onGround = false;
         onWall = false;
         friction = 0;
+        wallType = WallType.None;
+        floorType = FloorType.None;
+        ContactNormal = Vector2.zero;
+        ContactPoints.Clear();
+        _wallCollisions.Clear();
     }
 
     public void EvaluteCollision(Collision2D collision)
@@ -52,6 +64,9 @@ public class CollisionDataRetriever : MonoBehaviour
         if(onWall)
             wallType = CheckWhatWallType(collision);
 
+        if(onGround)
+            floorType = CheckWhatFloorType(collision);
+
         if(collision.gameObject.layer == LayerMask.NameToLayer("Slope"))
         {
             onGround = false;
@@ -63,6 +78,21 @@ public class CollisionDataRetriever : MonoBehaviour
                     _body.AddForce(Vector2.right * _body.mass * Physics2D.gravity.magnitude * .5f, ForceMode2D.Force);
             }
         }
+    }
+
+    private FloorType CheckWhatFloorType(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("StickyFloor"))
+        {
+            // Implement sticky floor behavior
+            return FloorType.Sticky;
+        }
+        else if(collision.gameObject.CompareTag("BouncyFloor"))
+        {
+            // Implement bouncy floor behavior
+            return FloorType.Bouncy;
+        }
+        return FloorType.None;
     }
 
     private WallType CheckWhatWallType(Collision2D collision)
@@ -81,6 +111,10 @@ public class CollisionDataRetriever : MonoBehaviour
         {
             // Implement unjumpable wall behavior
             return WallType.Unjumpable;
+        }
+        else if(collision.gameObject.CompareTag("Wall"))
+        {
+            return WallType.None; // Regular wall with no special properties
         }
         return WallType.None;
     }
@@ -113,7 +147,9 @@ public class CollisionDataRetriever : MonoBehaviour
 
     private void RetrieveFriction(Collision2D collision)
     {
-        _material = collision.rigidbody.sharedMaterial;
+        _material = collision.rigidbody != null 
+            ? collision.rigidbody.sharedMaterial 
+            : collision.collider.sharedMaterial;
 
         friction = 0;
 
@@ -126,6 +162,13 @@ public class CollisionDataRetriever : MonoBehaviour
     public bool GetOnGround() => onGround;
     public float GetFriction() => friction;
 
+}
+
+public enum FloorType
+{
+    None,
+    Sticky,
+    Bouncy,
 }
 
 public enum WallType

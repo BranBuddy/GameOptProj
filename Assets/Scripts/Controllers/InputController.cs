@@ -8,4 +8,5 @@ public abstract class InputController : ScriptableObject
     public abstract bool RetrieveJumpHoldInput(GameObject gameObject);
     public abstract bool RetrieveRestartInput(GameObject gameObject);
     public abstract bool RetrieveDashInput(GameObject gameObject);
+    public abstract bool RetrieveInteractInput(GameObject gameObject);
 }

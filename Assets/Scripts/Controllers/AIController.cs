@@ -38,6 +38,11 @@ public class AIController : InputController
         return gameObject.transform.localScale.x;
     }
 
+    public override bool RetrieveInteractInput(GameObject gameObject)
+    {
+        return false;
+    }
+
     public override bool RetrieveJumpInput(GameObject gameObject)
     {
         RaycastHit2D groundInfoCenter = Physics2D.Raycast(new Vector2(gameObject.transform.position.x + (_xOffset * gameObject.transform.localScale.x),

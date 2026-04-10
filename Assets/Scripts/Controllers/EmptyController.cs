@@ -8,6 +8,11 @@ public class EmptyController : InputController
         return 0;
     }
 
+    public override bool RetrieveInteractInput(GameObject gameObject)
+    {
+        return false;
+    }
+
     public override bool RetrieveJumpInput(GameObject gameObject)
     {
         return false;

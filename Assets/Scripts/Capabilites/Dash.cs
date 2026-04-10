@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Dash : MonoBehaviour
@@ -8,6 +9,7 @@ public class Dash : MonoBehaviour
     [Header("Dash Settings")]
     [SerializeField, Range(0, 20f)] private float _dashSpeed = 10f;
     [SerializeField, Range(0, 5f)] private float _dashDuration = 0.2f;
+    [SerializeField] private AudioClip _dashSFX;
     public bool CanDash { get; private set; } = true;
 
     private CollisionDataRetriever _dataRetriever;
@@ -17,11 +19,17 @@ public class Dash : MonoBehaviour
     private float _dashTimeLeft;
     private float _lastDashTime;
     private bool _desiredDash;
+    private dirHeld _lastDirectionHeld = dirHeld.none;
     void Awake()
     {
         _body = GetComponent<Rigidbody2D>();
         _controller = this.GetComponent<Controller>();
         _dataRetriever = this.GetComponent<CollisionDataRetriever>();
+    }
+
+    void Start()
+    {
+        StartCoroutine(GetLastDirectionHeldCoroutine());
     }
 
     private void Update()
@@ -31,9 +39,11 @@ public class Dash : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if (_desiredDash && CanDash)
         {
             StartDash();
+            SoundManager.Instance.sfxSource.PlayOneShot(_dashSFX);
         }
 
         if (_isDashing)
@@ -65,6 +75,15 @@ public class Dash : MonoBehaviour
         StartCoroutine(CheckGroundedAfterDash());
     }
 
+    private IEnumerator GetLastDirectionHeldCoroutine()
+    {
+        while (true)
+        {
+            GetDirectionHeld();
+            yield return null;
+        }
+    }
+
     private IEnumerator CheckGroundedAfterDash()
     {
         while (!_dataRetriever.GetOnGround())
@@ -74,11 +93,23 @@ public class Dash : MonoBehaviour
         CanDash = true;
     }
 
+    private void LastDirectionEffects()
+    {
+        if (_lastDirectionHeld == dirHeld.right)
+        {
+            _body.linearVelocity = new Vector2(transform.localScale.x * _dashSpeed, 0);
+        }
+        else
+        {
+            _body.linearVelocity = new Vector2(transform.localScale.x * -_dashSpeed, 0);
+        }
+    }
+
     private void DashDirectionEffects()
     {
         if(GetDirectionHeld() == dirHeld.none)
         {
-            _body.linearVelocity = Vector2.zero;
+           LastDirectionEffects();
         }
         else if (GetDirectionHeld() == dirHeld.right)
         {
@@ -96,10 +127,12 @@ public class Dash : MonoBehaviour
 
         if (horizontalInput > 0)
         {
+            _lastDirectionHeld = dirHeld.right;
             return dirHeld.right;
         }
         else if (horizontalInput < 0)
         {
+            _lastDirectionHeld = dirHeld.left;
             return dirHeld.left;
         }
         else

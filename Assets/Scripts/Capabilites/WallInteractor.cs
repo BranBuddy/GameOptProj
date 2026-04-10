@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(CollisionDataRetriever), typeof(Rigidbody2D), typeof(Controller))]
 public class WallInteractor : MonoBehaviour
 {
+    
 
     public bool WallJumping { get; private set; }
 
@@ -14,6 +15,12 @@ public class WallInteractor : MonoBehaviour
     [Header("Wall Jump")]
     [SerializeField] private Vector2 _wallJumpBounce = new Vector2(10.7f, 10f);
     [SerializeField] private Vector2 _wallJumpLeap = new Vector2(18f, 12f);
+    [SerializeField] private AudioClip _wallJumpSFX;
+
+    [Header("Wall Type SFX")]
+    [SerializeField] private AudioClip _unjumpableWallSFX;
+    [SerializeField] private AudioClip _stickyWallSFX;
+    [SerializeField] private AudioClip _bouncyWallSFX;
 
     private CollisionDataRetriever _collisionData;
     private Rigidbody2D _body;
@@ -69,10 +76,16 @@ public class WallInteractor : MonoBehaviour
         {
             ChangeWallPropertyBasedOnType();
 
-            if(_velocity.y < -_wallSlideMaxSpeed)
+            Slam slam = GetComponent<Slam>();
+
+            if (!slam.IsSlamActive)
             {
-                _velocity.y = -_wallSlideMaxSpeed;
+                if(_velocity.y < -_wallSlideMaxSpeed)
+                {
+                    _velocity.y = -_wallSlideMaxSpeed;
+                }
             }
+            // If IsSlamActive, allow greater downward velocity (slam force)
         }
 
         if((_onWall && _velocity.x == 0) || _onGround)
@@ -94,6 +107,7 @@ public class WallInteractor : MonoBehaviour
             _velocity = new Vector2(-jumpDir * _wallJumpBounce.x, _wallJumpBounce.y);
             WallJumping = true;
             _desiredJump = false;
+            SoundManager.Instance.sfxSource.PlayOneShot(_wallJumpSFX);
         }
 
         _body.linearVelocity = _velocity;
@@ -101,21 +115,25 @@ public class WallInteractor : MonoBehaviour
 
     private void ChangeWallPropertyBasedOnType()
     {
+        if(_collisionData.wallType == WallType.Unjumpable)
+        {
+            _desiredJump = false; // Prevent jumping off unjumpable walls
+            _wallSlideMaxSpeed = 3f; // Example: Increase slide speed for unjumpable walls
+            SoundManager.Instance.sfxSource.PlayOneShot(_unjumpableWallSFX);
+        }
+
         if(_collisionData.wallType == WallType.Sticky)
         {
             _wallSlideMaxSpeed = 0.5f; // Example: Increase stick time for sticky walls
+            SoundManager.Instance.sfxSource.PlayOneShot(_stickyWallSFX);
         }
         else if(_collisionData.wallType == WallType.Bouncy)
         {
             Vector2 oldWallJumpBounce = _wallJumpBounce;
             _wallJumpBounce = new Vector2(oldWallJumpBounce.x * 2.5f, oldWallJumpBounce.y * 2.5f); // Example: Increase jump bounce for bouncy walls
             _desiredJump = true;
+            SoundManager.Instance.sfxSource.PlayOneShot(_bouncyWallSFX);
             _wallJumpBounce = oldWallJumpBounce; // Reset to default after applying bounce effect
-        }
-        else if(_collisionData.wallType == WallType.Unjumpable)
-        {
-            _desiredJump = false; // Prevent jumping off unjumpable walls
-            _wallSlideMaxSpeed = 3f; // Example: Increase slide speed for unjumpable walls
         }
         else
         {
