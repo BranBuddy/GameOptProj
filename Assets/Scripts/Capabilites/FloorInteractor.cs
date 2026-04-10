@@ -7,6 +7,10 @@ public class FloorInteractor : MonoBehaviour
     [SerializeField] private float _stickyFriction = 1f;
     [SerializeField] private float _bouncyJumpMultiplier = 1.5f;
 
+    [Header("Floor Type SFX")]
+    [SerializeField] private AudioClip _stickyFloorSFX;
+    [SerializeField] private AudioClip _bouncyFloorSFX;
+
     private CollisionDataRetriever _collisionData;
     private Rigidbody2D _body;
     private Vector2 _velocity;
@@ -85,6 +89,7 @@ public class FloorInteractor : MonoBehaviour
         {
             // Temporarily increase jump height for bouncy floors
             _jump._jumpHeight = _originalJumpHeight * _bouncyJumpMultiplier;
+            SoundManager.Instance.sfxSource.PlayOneShot(_bouncyFloorSFX); // Play bouncy floor sound effect
             _desiredJump = true;
         }
         else if (_jump != null)

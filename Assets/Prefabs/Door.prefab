@@ -107,8 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   whatIsBeingTriggered: Door
-  interactID: {fileID: 0}
   doorToGoTo: {fileID: 0}
+  _doorSFX: {fileID: 8300000, guid: 82eb0354ec16f274a8a630019fd39b9e, type: 3}
 --- !u!50 &-2212996919826775796
 Rigidbody2D:
   serializedVersion: 5

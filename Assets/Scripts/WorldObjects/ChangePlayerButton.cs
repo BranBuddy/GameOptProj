@@ -7,6 +7,7 @@ public class ChangePlayerButton : CollisionInteraction
     [SerializeField] private EmptyController emptyController;
     [SerializeField] private PlayerController playerController; 
     
+    [SerializeField] private AudioClip _switchSFX;
     private Controller _playerActivateController;
     private Controller _playerDeactivateController;
 
@@ -27,6 +28,7 @@ public class ChangePlayerButton : CollisionInteraction
             Debug.Log($"[ChangePlayerButton] Player collision detected. Enabling {_playerActivateController} on {playerToActivate.name}, disabling {_playerDeactivateController} on {playerToDeactivate.name}.");
             _playerActivateController.enabled = true;
             _playerActivateController.inputController = playerController;
+            SoundManager.Instance.sfxSource.PlayOneShot(_switchSFX); // Play the switch sound effect
             CameraManager.Instance.UpdateCameraTarget(playerToActivate);
 
             _playerDeactivateController.enabled = false;

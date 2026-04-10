@@ -181,3 +181,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OpenLockedDoorPuzzle
   lockedDoor: {fileID: 1970629996152024675}
   key: {fileID: 0}
+  _lockOpenSFX: {fileID: 8300000, guid: 38830262612e77941989704fb8ac018a, type: 3}
+  lockWalls: []

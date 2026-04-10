@@ -10,6 +10,7 @@ public class Jump : MonoBehaviour
     [SerializeField, Range(0, 5f)] private float _upwardMovementMultipiler = 1.7f;
     [SerializeField, Range(0, .3f)] private float _coyoteTime = 0.2f;
     [SerializeField, Range(0, .3f)] private float _jumpBufferTime = 0.2f;
+    [SerializeField] private AudioClip _jumpSFX;
 
     private Rigidbody2D _body;
     private CollisionDataRetriever _ground;
@@ -102,6 +103,7 @@ public class Jump : MonoBehaviour
                 _jumpSpeed = Mathf.Max(_jumpSpeed - _velocity.y, 0f);
             }
             _velocity.y += _jumpSpeed;
+            SoundManager.Instance.sfxSource.PlayOneShot(_jumpSFX);
         }
     }
 }

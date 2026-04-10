@@ -6,6 +6,7 @@ public class OpenLockedDoorPuzzle : CollisionInteraction
     public GameObject lockedDoor;
     public Key key;
     private string requiredKeyID;
+    [SerializeField] private AudioClip _lockOpenSFX;
 
     public List<GameObject> lockWalls;
 
@@ -24,6 +25,7 @@ public class OpenLockedDoorPuzzle : CollisionInteraction
     public override void OnCollisionEnter2D(Collision2D collision)
     {
         base.OnCollisionEnter2D(collision); // Call the base method to handle any additional logic
+        Debug.Log($"[OpenLockedDoorPuzzle] Collided with: {collision.gameObject.name}, normal: {collision.contacts[0].normal}");
         if (collision.gameObject.CompareTag("Player"))
         {
             if (PlayerInventory.Instance.items.Contains(requiredKeyID))
@@ -36,6 +38,7 @@ public class OpenLockedDoorPuzzle : CollisionInteraction
                 }
                 
                 PlayerInventory.Instance.items.Remove(requiredKeyID); // Remove the key from inventory
+                SoundManager.Instance.sfxSource.PlayOneShot(_lockOpenSFX); // Play the lock opening sound effect
             }
             else
             {

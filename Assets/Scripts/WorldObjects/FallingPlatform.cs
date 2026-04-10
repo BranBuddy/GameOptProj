@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FallingPlatform : CollisionInteraction
@@ -10,6 +11,8 @@ public class FallingPlatform : CollisionInteraction
     private bool isFalling = false;
     private bool isShrinking = false;
     private bool isGrowing = false;
+
+    [SerializeField] private AudioClip _fallingSFX;
 
     private void Start()
     {
@@ -24,6 +27,7 @@ public class FallingPlatform : CollisionInteraction
         yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds before falling
         StartCoroutine(JutterPlatformBeforeFall()); // Start the juttering effect before falling
         yield return new WaitForSeconds(0.5f); // Wait for the juttering
+        SoundManager.Instance.sfxSource.PlayOneShot(_fallingSFX); // Play the falling sound effect
         StartCoroutine(DropPlatformToCertainDistance()); // Start dropping the platform
         StartCoroutine(ShrinkPlatformAfterFall()); // Start the shrinking effect after falling
     }
@@ -45,7 +49,6 @@ public class FallingPlatform : CollisionInteraction
 
     private IEnumerator JutterPlatformBeforeFall()
     {
-        Vector3 originalPosition = transform.position;
         float jutterDuration = 0.5f; // Duration of the juttering effect
         float elapsedTime = 0f;
 
@@ -62,7 +65,7 @@ public class FallingPlatform : CollisionInteraction
 
     private IEnumerator ShrinkPlatformAfterFall()
     {
-        Vector3 originalScale = transform.localScale;
+
         float shrinkDuration = .5f; // Duration of the shrinking effect
         float elapsedTime = 0f;
         isShrinking = true;
@@ -113,7 +116,7 @@ public class FallingPlatform : CollisionInteraction
         base.OnCollisionEnter2D(collision); // Call the base method to handle player reset
         if (collision.collider.CompareTag("Player"))
         {
-            if (!isFalling)
+            if (!isFalling && !isShrinking && !isGrowing)
             {
                 isFalling = true;
                 StartCoroutine(FallAfterDelay(collision.collider)); // Start the falling process after a delay

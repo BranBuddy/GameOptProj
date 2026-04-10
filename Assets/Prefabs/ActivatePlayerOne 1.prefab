@@ -156,6 +156,7 @@ MonoBehaviour:
   playerToDeactivate: {fileID: 7880947721187352605, guid: d6cda4126a439fe47a7bf4c0fbc9ae2b, type: 3}
   emptyController: {fileID: 11400000, guid: 8ccf6d08adcfd60448b501808d12d39f, type: 2}
   playerController: {fileID: 11400000, guid: af7ea9f10a5e642448d911228ef29212, type: 2}
+  _switchSFX: {fileID: 8300000, guid: 2046e7b380bc9db44b1bb090b1c1f11e, type: 3}
 --- !u!1 &7085049102165359104
 GameObject:
   m_ObjectHideFlags: 0

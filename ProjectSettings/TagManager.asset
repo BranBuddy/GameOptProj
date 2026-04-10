@@ -10,6 +10,7 @@ TagManager:
   - BouncyFloor
   - StickyFloor
   - Wall
+  - Loading
   layers:
   - Default
   - TransparentFX

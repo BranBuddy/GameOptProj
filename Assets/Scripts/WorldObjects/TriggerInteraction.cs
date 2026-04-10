@@ -5,6 +5,8 @@ public class TriggerInteraction : InteractionManager
 {
     public string triggerID;
     public idType idType;
+    public AudioClip _triggerSFX;
+
     public virtual void Start()
     {
         this.GetComponent<BoxCollider2D>().isTrigger = true; // Ensure the collider is a trigger

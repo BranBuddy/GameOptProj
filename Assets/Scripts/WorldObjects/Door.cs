@@ -4,6 +4,7 @@ using UnityEngine;
 public class Door : UnlockableTriggerInteraction
 {
     [SerializeField] private Door doorToGoTo;
+    [SerializeField] private AudioClip _doorSFX;
 
     public override void Interact(GameObject player)
     {
@@ -20,6 +21,7 @@ public class Door : UnlockableTriggerInteraction
         }
 
         Vector3 targetPosition = doorToGoTo.transform.position;
+        SoundManager.Instance.sfxSource.PlayOneShot(_doorSFX); // Play the door sound effect
         player.transform.position = targetPosition;
     }
 

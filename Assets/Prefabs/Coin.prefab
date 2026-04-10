@@ -153,4 +153,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Coin
   triggerID: 
   idType: 0
+  _triggerSFX: {fileID: 8300000, guid: ec934d8959a52f94390501af183e0a3e, type: 3}
   coinValue: 1

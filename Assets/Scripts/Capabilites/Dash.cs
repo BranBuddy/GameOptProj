@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Dash : MonoBehaviour
@@ -8,6 +9,7 @@ public class Dash : MonoBehaviour
     [Header("Dash Settings")]
     [SerializeField, Range(0, 20f)] private float _dashSpeed = 10f;
     [SerializeField, Range(0, 5f)] private float _dashDuration = 0.2f;
+    [SerializeField] private AudioClip _dashSFX;
     public bool CanDash { get; private set; } = true;
 
     private CollisionDataRetriever _dataRetriever;
@@ -41,6 +43,7 @@ public class Dash : MonoBehaviour
         if (_desiredDash && CanDash)
         {
             StartDash();
+            SoundManager.Instance.sfxSource.PlayOneShot(_dashSFX);
         }
 
         if (_isDashing)

@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 public class Checkpoint : TriggerInteraction
 {
     private Vector3 _restartPosition;
+    private bool collected = false;
     [SerializeField] private Sprite spriteToChangeTo;
     public override void Start()
     {
@@ -16,6 +18,9 @@ public class Checkpoint : TriggerInteraction
         base.OnTriggerEnter2D(collision); // Call the base method to handle inventory addition
         if (collision.CompareTag("Player"))
         {
+            if (collected)
+                return;
+
             Restart restartComponent = collision.GetComponent<Restart>();
             if (restartComponent != null)
             {
@@ -30,7 +35,9 @@ public class Checkpoint : TriggerInteraction
                 if (spriteRenderer != null)
                 {
                     spriteRenderer.sprite = spriteToChangeTo;
+                    SoundManager.Instance.sfxSource.PlayOneShot(_triggerSFX); // Play the checkpoint activation sound effect
                     Debug.Log($"Checkpoint {triggerID} sprite changed.");
+                    collected = true;
                 }
             }
         }

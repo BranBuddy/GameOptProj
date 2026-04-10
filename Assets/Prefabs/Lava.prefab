@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e072ce1dc23bc094c838eb7a8fc1d59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lava
+  deathSFX: {fileID: 8300000, guid: dae5c857eb0a70341a97be19ef5f7ec0, type: 3}
 --- !u!50 &475446356496740690
 Rigidbody2D:
   serializedVersion: 5

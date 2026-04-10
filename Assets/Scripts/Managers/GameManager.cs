@@ -1,5 +1,5 @@
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
@@ -42,6 +42,13 @@ public class GameManager : MonoBehaviour
         }
 
         TryResolveStartingPlayer();
+    }
+
+    public IEnumerator DisableThenDestroy(GameObject obj)
+    {
+        this.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds before destroying the object
+        Destroy(this.gameObject);
     }
 
     private void TryResolveStartingPlayer()

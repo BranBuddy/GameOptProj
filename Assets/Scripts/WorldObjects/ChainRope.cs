@@ -10,6 +10,8 @@ public class ChainRope : CollisionInteraction
     private Vector3 originalScale;
     private bool isFalling = false;
 
+    [SerializeField] private AudioClip _fallingSFX;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,6 +24,7 @@ public class ChainRope : CollisionInteraction
     private IEnumerator DropChain()
     {
         yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds before dropping the chain
+        SoundManager.Instance.sfxSource.PlayOneShot(_fallingSFX); // Play the falling sound effect
         rb.bodyType = RigidbodyType2D.Dynamic; // Make the chain affected by physics
         rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation; // Freeze horizontal movement and rotation
         isFalling = true; // Set the flag to indicate the chain is falling

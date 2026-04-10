@@ -181,3 +181,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Key
   triggerID: 
   idType: 0
+  _triggerSFX: {fileID: 8300000, guid: c795c5daf4e2f6847a5bfb87e2973c74, type: 3}
