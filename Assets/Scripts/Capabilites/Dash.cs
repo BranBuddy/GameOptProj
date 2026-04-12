@@ -7,7 +7,7 @@ public class Dash : MonoBehaviour
     private Controller _controller = null;
 
     [Header("Dash Settings")]
-    [SerializeField, Range(0, 20f)] private float _dashSpeed = 10f;
+    [SerializeField, Range(0, 20f)] public float _dashSpeed = 10f;
     [SerializeField, Range(0, 5f)] private float _dashDuration = 0.2f;
     [SerializeField] private AudioClip _dashSFX;
     public bool CanDash { get; private set; } = true;

@@ -5,9 +5,9 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     private Controller _controller = null;
-    [SerializeField, Range(0, 100)] private float _maxSpeed = 4f;
-    [SerializeField, Range(0, 100)] private float _maxAcceleration = 35f;
-    [SerializeField, Range(0, 100)] private float _maxAirAcceleration = 20f;
+    [SerializeField, Range(0, 100)] public float _maxSpeed = 4f;
+    [SerializeField, Range(0, 100)] public float _maxAcceleration = 35f;
+    [SerializeField, Range(0, 100)] public float _maxAirAcceleration = 20f;
 
     private Vector2 _direction, _desiredVelocity, _velocity;
     private Rigidbody2D _body;

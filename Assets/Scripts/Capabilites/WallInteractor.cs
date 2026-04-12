@@ -9,7 +9,7 @@ public class WallInteractor : MonoBehaviour
 
 
     [Header("Wall Slide")]
-    [SerializeField, Range(0.1f, 5)] private float _wallSlideMaxSpeed = 2f;
+    [SerializeField, Range(0.1f, 5)] public float _wallSlideMaxSpeed = 2f;
     [SerializeField, Range(0.05f, .5f)] private float _wallStickTime = 0.25f;
 
     [Header("Wall Jump")]
