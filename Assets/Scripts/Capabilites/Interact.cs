@@ -51,7 +51,6 @@ public class Interact : MonoBehaviour
             whatIsBeingInteractedWith = currentInteraction.name; // Set the name of the object being interacted with
             // Implement specific interaction logic here, such as unlocking a door or triggering an event
             Debug.Log($"Player triggered {this.gameObject.name}");
-            InteractionUIManager.Instance.ShowInteractionText(whatIsBeingInteractedWith); // Show interaction text with the name of the object
             canInteract = true;
         }
     }
@@ -62,14 +61,6 @@ public class Interact : MonoBehaviour
         {
             currentInteraction = null;
 
-            if (InteractionUIManager.Instance != null)
-            {
-                InteractionUIManager.Instance.HideInteractionText(); // Clear interaction text
-            }
-            else
-            {
-                Debug.LogWarning("InteractionUIManager.Instance is null in OnTriggerExit2D. Please ensure it exists in the scene and is properly assigned.");
-            }
             canInteract = false;
         }
     }

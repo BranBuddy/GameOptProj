@@ -28,30 +28,30 @@ public class Minimize : MonoBehaviour
     private void OnEnable()
     {
         minimizeAction.action.performed += OnMinimize;
-        minimizeAction.action.canceled += OnMaximize;
     }
 
     private void OnDisable()
     {
         minimizeAction.action.performed -= OnMinimize;
-        minimizeAction.action.canceled -= OnMaximize;
     }
 
     private void OnMinimize(InputAction.CallbackContext context)
     {
         if (GameManager.Instance.currentPlayer != this.gameObject) return;
-        if (isMinimized) return;
-        isMinimized = true;
-        StartCoroutine(MinimizeSize());
-        ChangeValuesOnMinimize();
-    }
-
-    private void OnMaximize(InputAction.CallbackContext context)
-    {
-        if (!isMinimized) return;
-        isMinimized = false;
-        StartCoroutine(MaximizeSize());
-        ResetValues();
+        if (isMinimized)
+        {
+            isMinimized = false;
+            StartCoroutine(MaximizeSize());
+            ResetValues();
+        }
+        else
+        {
+            StartCoroutine(MinimizeSize());
+            ChangeValuesOnMinimize();
+            isMinimized = true;
+        }
+        
+        
     }
 
     private void ChangeValuesOnMinimize()

@@ -1,12 +1,10 @@
 using UnityEngine;
 
 [RequireComponent(typeof(CollisionDataRetriever), typeof(Rigidbody2D), typeof(Controller))]
+
 public class WallInteractor : MonoBehaviour
 {
-    
-
     public bool WallJumping { get; private set; }
-
 
     [Header("Wall Slide")]
     [SerializeField, Range(0.1f, 5)] public float _wallSlideMaxSpeed = 2f;
@@ -21,6 +19,14 @@ public class WallInteractor : MonoBehaviour
     [SerializeField] private AudioClip _unjumpableWallSFX;
     [SerializeField] private AudioClip _stickyWallSFX;
     [SerializeField] private AudioClip _bouncyWallSFX;
+
+    [Header("Wall Coyote Time")]
+    [SerializeField] private float wallCoyoteTime = 0.15f; // Time after leaving wall to still allow wall jump
+    private float wallCoyoteTimer = 0f;
+
+    [Header("Wall Detection")]
+    [SerializeField] private float wallCheckDistance = 0.3f;
+    [SerializeField] private LayerMask wallLayer;
 
     private CollisionDataRetriever _collisionData;
     private Rigidbody2D _body;
@@ -39,18 +45,44 @@ public class WallInteractor : MonoBehaviour
 
     void Update()
     {
-        if(_onWall && !_onGround)
+        if((_onWall || wallCoyoteTimer > 0f) && !_onGround)
             _desiredJump |= _controller.inputController.RetrieveJumpInput(this.gameObject);
     }
 
     void FixedUpdate()
     {
+
         _velocity = _body.linearVelocity;
-        _onWall = _collisionData.onWall;
         _onGround = _collisionData.onGround;
+
+        // Only check wall in movement direction and only when airborne
+        float moveInput = _controller.inputController.RetrieveMovementInput(this.gameObject);
+        bool wallDetected = false;
+        bool wallLeft = false;
+        bool wallRight = false;
+        if (!_onGround && Mathf.Abs(moveInput) > 0.01f)
+        {
+            Vector2 checkDir = moveInput < 0 ? Vector2.left : Vector2.right;
+            Vector2 checkPos = (Vector2)transform.position + checkDir * wallCheckDistance * 0.5f;
+            wallDetected = Physics2D.OverlapCircle(checkPos, wallCheckDistance * 0.5f, wallLayer);
+            wallLeft = moveInput < 0 && wallDetected;
+            wallRight = moveInput > 0 && wallDetected;
+        }
+        _onWall = wallLeft || wallRight || _collisionData.onWall;
+
+        // Wall coyote time logic
+        if (_onWall && !_onGround)
+        {
+            wallCoyoteTimer = wallCoyoteTime;
+        }
+        else
+        {
+            wallCoyoteTimer -= Time.fixedDeltaTime;
+        }
+
         _wallDirX = _collisionData.ContactNormal.x;
 
-        if(_collisionData.onWall && !_collisionData.onGround && !WallJumping)
+        if(_onWall && !_onGround && !WallJumping)
         {
             if(_wallStickCounter > 0)
             {
@@ -70,7 +102,6 @@ public class WallInteractor : MonoBehaviour
                 _wallStickCounter = _wallStickTime;
             }
         }
-
 
         if(_onWall)
         {
@@ -93,7 +124,8 @@ public class WallInteractor : MonoBehaviour
             WallJumping = false;
         }
 
-        if (_desiredJump)
+        // Allow wall jump if on wall or within coyote time
+        if (_desiredJump && (wallCoyoteTimer > 0f))
         {
             float jumpDir = 0f;
 
@@ -102,11 +134,20 @@ public class WallInteractor : MonoBehaviour
                 Vector2 contact = _collisionData.ContactPoints[0];
                 jumpDir = (transform.position.x < contact.x) ? 1f : -1f;
             }
+            else if (wallLeft)
+            {
+                jumpDir = 1f;
+            }
+            else if (wallRight)
+            {
+                jumpDir = -1f;
+            }
             if (jumpDir == 0) jumpDir = 1f; // Final fallback
             Debug.Log($"Wall Jump Direction: {jumpDir}");
             _velocity = new Vector2(-jumpDir * _wallJumpBounce.x, _wallJumpBounce.y);
             WallJumping = true;
             _desiredJump = false;
+            wallCoyoteTimer = 0f;
             SoundManager.Instance.sfxSource.PlayOneShot(_wallJumpSFX);
         }
 

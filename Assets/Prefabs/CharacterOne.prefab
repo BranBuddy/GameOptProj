@@ -328,6 +328,7 @@ MonoBehaviour:
   _upwardMovementMultipiler: 1.7
   _coyoteTime: 0.2
   _jumpBufferTime: 0.2
+  _jumpSFX: {fileID: 0}
 --- !u!114 &3860742880754638074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +345,10 @@ MonoBehaviour:
   _wallStickTime: 0.25
   _wallJumpBounce: {x: 15, y: 10}
   _wallJumpLeap: {x: 18, y: 12}
+  _wallJumpSFX: {fileID: 0}
+  _unjumpableWallSFX: {fileID: 0}
+  _stickyWallSFX: {fileID: 0}
+  _bouncyWallSFX: {fileID: 0}
 --- !u!114 &8578840917066048233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,12 +356,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3381058528091843237}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba04e0f800f63334a924da0ff29cee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Controller
-  inputController: {fileID: 11400000, guid: af7ea9f10a5e642448d911228ef29212, type: 2}
+  inputController: {fileID: 11400000, guid: 8ccf6d08adcfd60448b501808d12d39f, type: 2}
 --- !u!114 &1415848287212850246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,6 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dash
   _dashSpeed: 10
   _dashDuration: 0.2
+  _dashSFX: {fileID: 0}
 --- !u!114 &533268695171886584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +406,8 @@ MonoBehaviour:
   _defaultFriction: 0.4
   _stickyFriction: 1
   _bouncyJumpMultiplier: 3
+  _stickyFloorSFX: {fileID: 0}
+  _bouncyFloorSFX: {fileID: 0}
 --- !u!58 &6044150239053245594
 CircleCollider2D:
   m_ObjectHideFlags: 0

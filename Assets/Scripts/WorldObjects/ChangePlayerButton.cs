@@ -35,8 +35,6 @@ public class ChangePlayerButton : CollisionInteraction
             _playerDeactivateController.inputController = emptyController;
 
             GameManager.Instance.currentPlayer = playerToActivate;
-
-            InteractionUIManager.Instance.HideInteractionText();
         }
     }
 }

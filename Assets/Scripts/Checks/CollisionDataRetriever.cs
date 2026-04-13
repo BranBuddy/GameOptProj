@@ -92,6 +92,11 @@ public class CollisionDataRetriever : MonoBehaviour
             // Implement bouncy floor behavior
             return FloorType.Bouncy;
         }
+        else if(collision.gameObject.CompareTag("IcyFloor"))
+        {
+            // Implement icy floor behavior
+            return FloorType.Icy;
+        }
         return FloorType.None;
     }
 
@@ -169,6 +174,7 @@ public enum FloorType
     None,
     Sticky,
     Bouncy,
+    Icy
 }
 
 public enum WallType
