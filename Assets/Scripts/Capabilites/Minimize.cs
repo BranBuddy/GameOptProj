@@ -13,6 +13,7 @@ public class Minimize : MonoBehaviour
     private Move move;
     private Dash dash;
     private WallInteractor wallInteractor;
+    private Restart restart;
 
     private float originalJumpHeight, originalMaxSpeed, originalDashSpeed, originalWallSlideMaxSpeed, originalAirAcceleration, originalMaxAcceleration;
 
@@ -23,6 +24,7 @@ public class Minimize : MonoBehaviour
         move = GetComponent<Move>();
         dash = GetComponent<Dash>();
         wallInteractor = GetComponent<WallInteractor>();
+        restart = GetComponent<Restart>();
     }
 
     private void OnEnable()
@@ -94,9 +96,16 @@ public class Minimize : MonoBehaviour
 
         while (elapsedTime < duration)
         {
+            if (Physics2D.OverlapCircle(transform.position, 0.5f, LayerMask.GetMask("Slab")))
+            {
+                restart.Reset();
+                break;
+            }
+
             Vector3 scale = Vector3.Lerp(transform.localScale, targetScale, elapsedTime / duration);
             transform.localScale = scale;
             elapsedTime += Time.deltaTime;
+            
             yield return null;
         }
 
