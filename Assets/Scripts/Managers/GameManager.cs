@@ -1,6 +1,11 @@
+/*
+    Central script used to get which character is currently in use, update UI, and handle win condition.
+*/
+
 using UnityEngine;
-using System.Collections;
+using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -28,6 +33,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> players = new List<GameObject>();
     public GameObject playerToStartAs;
     public GameObject currentPlayer;
+    public TextMeshProUGUI coinCountText, playerOneDeathCountText, playerTwoDeathCountText;
 
     private void Awake()
     {
@@ -42,13 +48,6 @@ public class GameManager : MonoBehaviour
         }
 
         TryResolveStartingPlayer();
-    }
-
-    public IEnumerator DisableThenDestroy(GameObject obj)
-    {
-        this.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds before destroying the object
-        Destroy(this.gameObject);
     }
 
     private void TryResolveStartingPlayer()
@@ -67,5 +66,28 @@ public class GameManager : MonoBehaviour
     public void IncreaseCoinCount(int amount)
     {
         coinCount += amount;
+        coinCountText.text = coinCount.ToString();
+    }
+
+    public void IncreasePlayerDeathCount(GameObject player)
+    {
+        if (player == players[0])
+        {
+            int currentCount = int.Parse(playerOneDeathCountText.text);
+            playerOneDeathCountText.text = (currentCount + 1).ToString();
+        }
+        else if (player == players[1])
+        {
+            int currentCount = int.Parse(playerTwoDeathCountText.text);
+            playerTwoDeathCountText.text = (currentCount + 1).ToString();
+        }
+    }
+
+    public void CompleteGame()
+    {
+        SoundManager.Instance.musicSource.Stop(); // Stop the current music
+        SceneManager.LoadScene("WinScene"); 
+        SoundManager.Instance.musicSource.clip = SoundManager.Instance.winMusic; // Set the win music to play
+        SoundManager.Instance.musicSource.Play(); // Play the win music
     }
 }

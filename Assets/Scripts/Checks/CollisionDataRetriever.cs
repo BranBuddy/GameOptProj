@@ -1,3 +1,8 @@
+/*
+    This script helps manage the different collision the player has (floor, wall, slope, etc).
+    It retrieves data such as whether the player is on the ground, the friction of the surface, and the type of wall or floor.
+*/
+
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -92,6 +97,11 @@ public class CollisionDataRetriever : MonoBehaviour
             // Implement bouncy floor behavior
             return FloorType.Bouncy;
         }
+        else if(collision.gameObject.CompareTag("IcyFloor"))
+        {
+            // Implement icy floor behavior
+            return FloorType.Icy;
+        }
         return FloorType.None;
     }
 
@@ -169,6 +179,7 @@ public enum FloorType
     None,
     Sticky,
     Bouncy,
+    Icy
 }
 
 public enum WallType

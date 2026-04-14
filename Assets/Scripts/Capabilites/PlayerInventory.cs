@@ -1,3 +1,8 @@
+/*
+    This script is a singleton that holds the player's inventory and checkpoints. 
+    It also has a universal event for when a checkpoint is collected, which can be used by other scripts to update the UI or trigger other events.
+*/
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;

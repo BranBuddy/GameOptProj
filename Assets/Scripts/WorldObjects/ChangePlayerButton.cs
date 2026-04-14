@@ -1,3 +1,7 @@
+/*
+    Button that swaps active players when pressed, including controller and SFX handling.
+*/
+
 using UnityEngine;
 
 public class ChangePlayerButton : CollisionInteraction
@@ -35,8 +39,6 @@ public class ChangePlayerButton : CollisionInteraction
             _playerDeactivateController.inputController = emptyController;
 
             GameManager.Instance.currentPlayer = playerToActivate;
-
-            InteractionUIManager.Instance.HideInteractionText();
         }
     }
 }

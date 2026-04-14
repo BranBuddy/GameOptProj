@@ -1,6 +1,9 @@
+/*
+    Rope or chain object that can fall when triggered. Handles physics, SFX, and reset logic.
+*/
+
 using UnityEngine;
 using System.Collections;
-using Unity.VisualScripting;
 
 public class ChainRope : CollisionInteraction
 {

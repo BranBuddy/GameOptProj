@@ -1,5 +1,10 @@
+/*
+    This script gives the player the ability to dash on air and ground.
+    The player can only dash again once they have touched the ground after a dash.
+    Direction of the dash is either the direction the player is currently holding, or if they are not holding a direction, the direction they last held.
+*/
+
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Dash : MonoBehaviour
@@ -7,7 +12,7 @@ public class Dash : MonoBehaviour
     private Controller _controller = null;
 
     [Header("Dash Settings")]
-    [SerializeField, Range(0, 20f)] private float _dashSpeed = 10f;
+    [SerializeField, Range(0, 20f)] public float _dashSpeed = 10f;
     [SerializeField, Range(0, 5f)] private float _dashDuration = 0.2f;
     [SerializeField] private AudioClip _dashSFX;
     public bool CanDash { get; private set; } = true;
@@ -93,6 +98,7 @@ public class Dash : MonoBehaviour
         CanDash = true;
     }
 
+    // Depending on what dir is held last, this function applies dash velocity in that direction. If no direction is held, it applies dash velocity in the last direction held.
     private void LastDirectionEffects()
     {
         if (_lastDirectionHeld == dirHeld.right)

@@ -1,3 +1,7 @@
+/*
+    Handles jump physics for the player, including coyote time and jump buffering.
+*/
+
 using UnityEngine;
 
 [RequireComponent(typeof(CollisionDataRetriever), typeof(Rigidbody2D), typeof(Controller))]

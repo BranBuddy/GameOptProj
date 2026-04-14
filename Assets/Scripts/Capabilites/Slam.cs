@@ -1,3 +1,8 @@
+/*
+    Allows player to head towards the ground at an increased speed.
+    Mainly a QoL feature to help with slow wall slide speeds.
+*/
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;

@@ -1,4 +1,8 @@
 
+/*
+    Manages a stack/list of menus for UI navigation, including handling back actions and main menu reference.
+*/
+
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;

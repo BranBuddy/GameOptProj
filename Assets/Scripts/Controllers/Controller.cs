@@ -1,3 +1,7 @@
+/*
+   Helper function that is used to easily find controller
+*/
+
 using UnityEngine;
 
 public class Controller : MonoBehaviour

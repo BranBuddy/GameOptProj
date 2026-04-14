@@ -1,25 +1,31 @@
 fileFormatVersion: 2
-guid: 251e7221da7e22646bab3e8d8e31f2f1
+guid: bba318abee4b07643a1142d25beb13d6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3035825042608305565
-    second: obstaclesandprops_0
+      213: 5707218116961789024
+    second: ui_0
   - first:
-      213: -641609694421297692
-    second: obstaclesandprops_1
+      213: 3556181715638617739
+    second: ui_1
   - first:
-      213: 1748432718344387864
-    second: obstaclesandprops_2
+      213: -8816031292267695619
+    second: ui_2
   - first:
-      213: 5444454785610317294
-    second: obstaclesandprops_3
+      213: 7263181891274304025
+    second: ui_3
   - first:
-      213: -6089302853030884348
-    second: obstaclesandprops_4
+      213: -7975249404588759376
+    second: ui_4
   - first:
-      213: -8394336086860248946
-    second: obstaclesandprops_5
+      213: -9005941153719796207
+    second: ui_5
+  - first:
+      213: 2163036573998151787
+    second: ui_6
+  - first:
+      213: 8599436577718238185
+    second: ui_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -128,13 +134,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: obstaclesandprops_0
+      name: ui_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
+        x: 1
+        y: 49
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +149,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d9537e0baca612a20800000000000000
-      internalID: 3035825042608305565
+      spriteID: 0646e25a3ac143f40800000000000000
+      internalID: 5707218116961789024
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: obstaclesandprops_1
+      name: ui_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
+        x: 17
+        y: 49
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e5529fd16b8817f0800000000000000
-      internalID: -641609694421297692
+      spriteID: b86016dcd681a5130800000000000000
+      internalID: 3556181715638617739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: obstaclesandprops_2
+      name: ui_2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
+        x: 33
+        y: 49
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +193,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 81d76923b4ea34810800000000000000
-      internalID: 1748432718344387864
+      spriteID: df1f7afbf3a27a580800000000000000
+      internalID: -8816031292267695619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: obstaclesandprops_3
+      name: ui_3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
+        x: 49
+        y: 49
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eed7af318c69e8b40800000000000000
-      internalID: 5444454785610317294
+      spriteID: 91a6478b2710cc460800000000000000
+      internalID: 7263181891274304025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: obstaclesandprops_4
+      name: ui_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
+        x: 1
+        y: 33
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40c425351537e7ba0800000000000000
-      internalID: -6089302853030884348
+      spriteID: 0b66754dbe8325190800000000000000
+      internalID: -7975249404588759376
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: obstaclesandprops_5
+      name: ui_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
+        x: 17
+        y: 33
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -253,96 +259,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e88c379ddc3518b80800000000000000
-      internalID: -8394336086860248946
+      spriteID: 11eb5787c38740380800000000000000
+      internalID: -9005941153719796207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: obstaclesandprops_6
+      name: ui_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
+        x: 33
+        y: 33
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c80a1446b7219e941ad23722a9eadc95
-      internalID: 612745672
+      spriteID: b687655cd46a40e10800000000000000
+      internalID: 2163036573998151787
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: obstaclesandprops_7
+      name: ui_7
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
+        x: 49
+        y: 33
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f5f4d3536c9add3498c7402b826d906e
-      internalID: -306655344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: obstaclesandprops_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5785fe8e1cba7c4fa40bcc23aba0d8a
-      internalID: -1427430297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: obstaclesandprops_9
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a4e79239a0eba9499e60b72cf66b19d
-      internalID: -651840282
+      spriteID: 9eb75637106575770800000000000000
+      internalID: 8599436577718238185
       vertices: []
       indices: 
       edges: []
@@ -351,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: aaa338827d38a454dbf9d024ecdffc18
+    spriteID: ce68b6b6c7d2b1143b0b5b6729af16c1
     internalID: 0
     vertices: []
     indices: 
@@ -361,18 +323,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      obstaclesandprops_0: 3035825042608305565
-      obstaclesandprops_1: -641609694421297692
-      obstaclesandprops_2: 1748432718344387864
-      obstaclesandprops_3: 5444454785610317294
-      obstaclesandprops_4: -6089302853030884348
-      obstaclesandprops_5: -8394336086860248946
-      obstaclesandprops_6: 612745672
-      obstaclesandprops_7: -306655344
-      obstaclesandprops_8: -1427430297
-      obstaclesandprops_9: -651840282
+      ui_0: 5707218116961789024
+      ui_1: 3556181715638617739
+      ui_2: -8816031292267695619
+      ui_3: 7263181891274304025
+      ui_4: -7975249404588759376
+      ui_5: -9005941153719796207
+      ui_6: 2163036573998151787
+      ui_7: 8599436577718238185
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

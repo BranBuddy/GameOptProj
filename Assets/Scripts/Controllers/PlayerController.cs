@@ -1,5 +1,9 @@
+/*
+    This script is responsible for retrieving player input.
+    It implements the InputController interface and provides methods to retrieve movement, jump, dash, interact, and restart inputs.
+*/
+
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [CreateAssetMenu(fileName = "PlayerController", menuName = "InputController/PlayerController", order = 1)]
 public class PlayerController : InputController

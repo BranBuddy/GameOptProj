@@ -154,4 +154,4 @@ MonoBehaviour:
   triggerID: 
   idType: 0
   _triggerSFX: {fileID: 8300000, guid: 79dc6b452d936364abd7a18b7b4540d2, type: 3}
-  spriteToChangeTo: {fileID: 364915890800533025, guid: bec03d06b2ebb1c438709ba0c333869e, type: 3}
+  spriteToChangeTo: {fileID: -6719483722783721560, guid: bec03d06b2ebb1c438709ba0c333869e, type: 3}

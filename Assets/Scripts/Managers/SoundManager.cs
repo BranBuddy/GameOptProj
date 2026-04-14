@@ -1,3 +1,8 @@
+/*
+    Manager to easily change volumes and what music/sfx is playing
+*/
+
+
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -39,4 +44,5 @@ public class SoundManager : MonoBehaviour
     [SerializeField] internal AudioSource sfxSource;
     [SerializeField] internal AudioClip mainMenuMusic;
     [SerializeField] internal AudioClip levelMusic;
+    [SerializeField] internal AudioClip winMusic;
 }

@@ -1,4 +1,7 @@
-using Unity.VisualScripting;
+/*
+    Door that teleports the player to another door when interacted with. Plays SFX and supports linking to another door.
+*/
+
 using UnityEngine;
 
 public class Door : UnlockableTriggerInteraction

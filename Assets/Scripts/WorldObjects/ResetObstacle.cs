@@ -1,3 +1,7 @@
+/*
+    Base class for obstacles that reset the player on collision (e.g., spikes, lava). Plays a death SFX and triggers player reset logic.
+*/
+
 using UnityEngine;
 
 public class ResetObstacle : MonoBehaviour

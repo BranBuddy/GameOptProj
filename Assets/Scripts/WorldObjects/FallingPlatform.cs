@@ -1,5 +1,8 @@
+/*
+    Platform that falls when triggered by the player. Handles physics, SFX, and reset logic.
+*/
+
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FallingPlatform : CollisionInteraction
@@ -104,10 +107,12 @@ public class FallingPlatform : CollisionInteraction
 
     private void ResetObject()
     {
-        transform.position = originalPosition; // Reset position
-        transform.localScale = originalScale; // Reset scale
+        StopAllCoroutines(); // Stop any ongoing coroutines that might affect position
         rb.bodyType = RigidbodyType2D.Static; // Ensure platform is not affected by physics
         rb.linearVelocity = Vector2.zero; // Stop any movement
+        rb.angularVelocity = 0f;
+        transform.position = originalPosition; // Reset position
+        transform.localScale = originalScale; // Reset scale
         isFalling = false; // Allow platform to fall again
     }
 
