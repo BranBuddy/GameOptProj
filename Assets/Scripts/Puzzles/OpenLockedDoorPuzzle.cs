@@ -1,3 +1,7 @@
+/*
+    This script is used to progress through the game if the player has the correct key in their inventory when they collide with the locked door.
+*/
+
 using System.Collections.Generic;
 using UnityEngine;
 

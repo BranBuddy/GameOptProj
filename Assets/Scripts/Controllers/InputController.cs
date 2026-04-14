@@ -1,3 +1,8 @@
+/*
+    This is an abstract class that defines the interface for retrieving player input. 
+    Different implementations of this class can be created to handle different input methods (keyboard, gamepad, etc).
+*/
+
 using UnityEngine;
 
 public abstract class InputController : ScriptableObject

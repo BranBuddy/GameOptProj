@@ -1,6 +1,8 @@
-using Unity.VisualScripting;
+/*
+    Base class for unlockable or interactable triggers (e.g., doors). Handles interaction logic and unique identifiers.
+*/
+
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class UnlockableTriggerInteraction : InteractionManager
 {

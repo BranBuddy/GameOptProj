@@ -586,7 +586,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2ef296e1-0e9a-4387-b02e-e19c0112e1f9"",
-                    ""path"": ""<Keyboard>/r"",
+                    ""path"": ""<Keyboard>/backquote"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -652,7 +652,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0fa6d34d-d890-40fa-9c9a-f7ae5da41353"",
-                    ""path"": ""<Keyboard>/alt"",
+                    ""path"": ""<Keyboard>/r"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

@@ -1,4 +1,7 @@
-using UnityEngine;
+/*
+    Spike obstacle that resets the player on contact. Inherits from ResetObstacle.
+*/
+
 
 public class Spike : ResetObstacle
 {

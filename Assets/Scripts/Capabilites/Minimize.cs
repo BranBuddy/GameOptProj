@@ -1,3 +1,9 @@
+/*
+    Allows the player to minimize which can change stat values. Changing size can help traverse smaller walkways or clear certain obstacles.
+    If when maximizing the player can clip into an GO, the player will be reset to the last checkpoint to prevent softlocks.
+*/
+
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,6 +21,7 @@ public class Minimize : MonoBehaviour
     private WallInteractor wallInteractor;
     private Restart restart;
 
+    public AudioClip minimizeSfx, maximizeSfx;
     private float originalJumpHeight, originalMaxSpeed, originalDashSpeed, originalWallSlideMaxSpeed, originalAirAcceleration, originalMaxAcceleration;
 
     private void Awake()
@@ -43,11 +50,13 @@ public class Minimize : MonoBehaviour
         if (isMinimized)
         {
             isMinimized = false;
+            SoundManager.Instance.sfxSource.PlayOneShot(maximizeSfx);
             StartCoroutine(MaximizeSize());
             ResetValues();
         }
         else
         {
+            SoundManager.Instance.sfxSource.PlayOneShot(minimizeSfx);
             StartCoroutine(MinimizeSize());
             ChangeValuesOnMinimize();
             isMinimized = true;

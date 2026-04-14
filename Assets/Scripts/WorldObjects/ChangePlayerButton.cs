@@ -1,3 +1,7 @@
+/*
+    Button that swaps active players when pressed, including controller and SFX handling.
+*/
+
 using UnityEngine;
 
 public class ChangePlayerButton : CollisionInteraction

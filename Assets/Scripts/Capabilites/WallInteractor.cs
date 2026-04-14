@@ -1,3 +1,8 @@
+/*
+    Handles wall interactions for the player, including wall sliding and wall jumping. 
+    It also includes different wall types that can affect the player's movement and jump properties.
+*/
+
 using UnityEngine;
 
 [RequireComponent(typeof(CollisionDataRetriever), typeof(Rigidbody2D), typeof(Controller))]
@@ -35,6 +40,8 @@ public class WallInteractor : MonoBehaviour
 
     private bool _onWall, _onGround, _desiredJump;
     private float _wallDirX, _wallStickCounter;
+    private float wallJumpGraceTime = 0.15f;
+    private float wallJumpGraceTimer = 0f;
 
     void Start()
     {
@@ -47,6 +54,9 @@ public class WallInteractor : MonoBehaviour
     {
         if((_onWall || wallCoyoteTimer > 0f) && !_onGround)
             _desiredJump |= _controller.inputController.RetrieveJumpInput(this.gameObject);
+        // Wall jump grace timer countdown
+        if (WallJumping)
+            wallJumpGraceTimer -= Time.deltaTime;
     }
 
     void FixedUpdate()
@@ -116,19 +126,16 @@ public class WallInteractor : MonoBehaviour
                     _velocity.y = -_wallSlideMaxSpeed;
                 }
             }
-            // If IsSlamActive, allow greater downward velocity (slam force)
         }
 
-        if((_onWall && _velocity.x == 0) || _onGround)
+        if((_onWall && _velocity.x == 0) || _onGround || wallJumpGraceTimer <= 0f)
         {
             WallJumping = false;
         }
 
-        // Allow wall jump if on wall or within coyote time
-        if (_desiredJump && (wallCoyoteTimer > 0f))
+        if (_desiredJump && _onWall && !_onGround)
         {
             float jumpDir = 0f;
-
             if (_collisionData != null && _collisionData.ContactPoints != null && _collisionData.ContactPoints.Count > 0)
             {
                 Vector2 contact = _collisionData.ContactPoints[0];
@@ -142,13 +149,17 @@ public class WallInteractor : MonoBehaviour
             {
                 jumpDir = -1f;
             }
-            if (jumpDir == 0) jumpDir = 1f; // Final fallback
-            Debug.Log($"Wall Jump Direction: {jumpDir}");
-            _velocity = new Vector2(-jumpDir * _wallJumpBounce.x, _wallJumpBounce.y);
-            WallJumping = true;
-            _desiredJump = false;
-            wallCoyoteTimer = 0f;
-            SoundManager.Instance.sfxSource.PlayOneShot(_wallJumpSFX);
+
+            if (jumpDir != 0)
+            {
+                Debug.Log($"Wall Jump Direction: {jumpDir}");
+                _velocity = new Vector2(-jumpDir * _wallJumpBounce.x, _wallJumpBounce.y);
+                WallJumping = true;
+                wallJumpGraceTimer = wallJumpGraceTime;
+                _desiredJump = false;
+                wallCoyoteTimer = 0f;
+                SoundManager.Instance.sfxSource.PlayOneShot(_wallJumpSFX);
+            }
         }
 
         _body.linearVelocity = _velocity;

@@ -1,6 +1,7 @@
-using System;
-using System.Collections;
-using Unity.VisualScripting;
+/*
+    Represents a checkpoint that saves the player's position and updates the respawn location when collected.
+*/
+
 using UnityEngine;
 public class Checkpoint : TriggerInteraction
 {

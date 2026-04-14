@@ -1,8 +1,8 @@
-using Unity.VisualScripting;
-using UnityEditor;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System.Collections.Generic;
+
+
 
 public class PauseManager : MonoBehaviour
 {
@@ -11,14 +11,20 @@ public class PauseManager : MonoBehaviour
     private bool isPaused = false;
     private MenuListManager menuListManager;
 
-
-
-
     private void OnEnable()
     {
         Debug.Log("[PauseManager] OnEnable called. pauseAction assigned: " + (pauseAction != null));
         if (pauseAction != null)
             pauseAction.action.performed += TogglePause;
+    }
+    
+    private void Start()
+    {
+        // Ensure the pause menu is hidden at the start of the game
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(false);
+        }
     }
 
 
@@ -52,18 +58,12 @@ public class PauseManager : MonoBehaviour
         }
     }
 
-    // Checklist:
-    // 1. Is pauseAction assigned in the Inspector?
-    // 2. Is the PlayerInput component present and set to the 'Player' action map at start?
-    // 3. Is the PauseManager on the same GameObject as PlayerInput?
-    // 4. Is the pause binding mapped to the correct key (e.g., Escape) in your Input Actions asset?
-
     public void ResumeGame()
     {
         Time.timeScale = 1f;
         isPaused = false;
-        SwapActionMap("Player"); // Switch back to the player action map when resuming the game 
-        pauseMenuUI.SetActive(false); // Hide the pause menu UI
+        SwapActionMap("Player");
+        pauseMenuUI.SetActive(false); 
         if (menuListManager != null)
         {
             menuListManager.GoBackToPreviousMenu();
@@ -76,15 +76,13 @@ public class PauseManager : MonoBehaviour
         Application.Quit();
     }
 
+
     public void PauseGame()
     {
-        Time.timeScale = 0f; 
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
         isPaused = true;
-        pauseMenuUI.SetActive(true); // Show the pause menu UI
-        if (menuListManager != null)
-        {
-            menuListManager.AddMenuToList(pauseMenuUI);
-        }
+    
     }
 
     private void SwapActionMap(string actionMapName)

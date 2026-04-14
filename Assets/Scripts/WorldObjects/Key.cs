@@ -1,3 +1,7 @@
+/*
+    Handles key collection logic, including SFX and inventory update.
+*/
+
 using UnityEngine;
 
 public class Key : TriggerInteraction

@@ -1,4 +1,8 @@
-    
+/*
+    Handles with the interaction the player has, mainly with doors.
+*/
+
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class Interact : MonoBehaviour
@@ -32,7 +36,7 @@ public class Interact : MonoBehaviour
         interactID.action.Disable();
     }
 
-     private void InteractWithObject(InputAction.CallbackContext context)
+    private void InteractWithObject(InputAction.CallbackContext context)
     {
         Debug.Log($"InteractWithObject called. canInteract={canInteract}, currentInteraction={currentInteraction}, whatIsBeingInteractedWith={whatIsBeingInteractedWith}");
         if (canInteract && currentInteraction != null)
@@ -43,6 +47,7 @@ public class Interact : MonoBehaviour
         }
     }
 
+    // Gets what is current being interacted with, and if it is of type UnlockableTriggerInteraction, allows the player to interact with it by pressing the interact button. This is used for doors and other objects that can be interacted with.
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<UnlockableTriggerInteraction>() != null && this.gameObject == GameManager.Instance.currentPlayer) // Check if the collided object has an UnlockableTriggerInteraction and if this player is active

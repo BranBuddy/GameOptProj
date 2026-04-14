@@ -1,3 +1,7 @@
+/*
+    Handles game settings UI, including resolution, display mode, and audio sliders for music and SFX.
+*/
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;

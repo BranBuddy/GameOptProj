@@ -1,5 +1,8 @@
+/*
+    This script is a singleton that allows other scripts to easily change focus of the central camera
+*/
+
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 public class CameraManager : MonoBehaviour
 {

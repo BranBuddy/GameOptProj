@@ -1,5 +1,7 @@
-using System;
-using Unity.VisualScripting;
+/*
+    Represents the level end point. Checks if the required player reaches the end and triggers level completion logic.
+*/
+
 using UnityEngine;
 
 public class EndPoint : CollisionInteraction

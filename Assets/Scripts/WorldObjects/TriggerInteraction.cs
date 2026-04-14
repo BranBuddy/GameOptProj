@@ -1,4 +1,7 @@
-using Unity.VisualScripting;
+/*
+    Base class for trigger-based interactions (e.g., coins, keys, checkpoints). Handles trigger logic and SFX.
+*/
+
 using UnityEngine;
 
 public class TriggerInteraction : InteractionManager

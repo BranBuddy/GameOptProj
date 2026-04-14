@@ -1,3 +1,7 @@
+/*
+    Handles how the player interacts with different floor types (sticky, bouncy, icy).
+*/
+
 using UnityEngine;
 
 public class FloorInteractor : MonoBehaviour

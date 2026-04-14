@@ -50,6 +50,7 @@ MonoBehaviour:
   sfxSource: {fileID: 6348078887394378391}
   mainMenuMusic: {fileID: 8300000, guid: fab63ce43cbe16b49b8549ec467efa83, type: 3}
   levelMusic: {fileID: 8300000, guid: 57b3ea38598fcb64d8f07e71dd9955e9, type: 3}
+  winMusic: {fileID: 8300000, guid: fe6b952e779308346b6648e27515493f, type: 3}
 --- !u!82 &7513150441639991147
 AudioSource:
   m_ObjectHideFlags: 0

@@ -1,5 +1,8 @@
+/*
+    Platform that falls when triggered by the player. Handles physics, SFX, and reset logic.
+*/
+
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FallingPlatform : CollisionInteraction

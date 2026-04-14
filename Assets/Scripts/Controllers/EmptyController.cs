@@ -1,3 +1,8 @@
+/*
+    This is a simple controller that does nothing, used for when the players switch characters and we want to disable the previous character's input 
+    without disabling the entire controller component.
+*/
+
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EmptyController", menuName = "InputController/EmptyController", order = 0)]

@@ -1,3 +1,7 @@
+/*
+    Base class for managing interactions and providing utility methods for derived interaction scripts.
+*/
+
 using UnityEngine;
 using System.Collections;
 
