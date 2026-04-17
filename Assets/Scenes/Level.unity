@@ -7334,6 +7334,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5940256827095171648, guid: 2365836bf90a0714f905130407b29b33, type: 3}
   m_PrefabInstance: {fileID: 352370173}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &257186818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: UI/Back
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: 1b13529c-1935-4a0b-88fa-7aede3db41e6
 --- !u!1001 &260251604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8665,6 +8679,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 838331967671359066, guid: 2920f3ecdb3e2084ca20af919a3bd833, type: 3}
   m_PrefabInstance: {fileID: 14099652}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &318654439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Interact
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: e7d22fef-aa4a-414f-947a-d9e70ccde4f3
 --- !u!1 &319436796
 GameObject:
   m_ObjectHideFlags: 0
@@ -10443,6 +10471,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5579a3fae0fd3db42976874f79b5b052, type: 3}
+--- !u!114 &374651834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Slam
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: c4dfb613-f576-490c-a15a-733de0741618
 --- !u!1001 &376300718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12662,6 +12704,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 898613361171425634, guid: 5579a3fae0fd3db42976874f79b5b052, type: 3}
   m_PrefabInstance: {fileID: 1466188}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &459205253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Interact
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: e7d22fef-aa4a-414f-947a-d9e70ccde4f3
 --- !u!4 &462239292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4937670142273771627, guid: 530e3c89e674de442b3d2ba8d9c40804, type: 3}
@@ -13155,20 +13211,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 898613361171425634, guid: 5579a3fae0fd3db42976874f79b5b052, type: 3}
   m_PrefabInstance: {fileID: 1407706857}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &476358120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/ZoomOutCamera
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: de0618ec-f1a9-449b-9643-4e2e076c5ab8
 --- !u!1 &476558300
 GameObject:
   m_ObjectHideFlags: 0
@@ -17391,6 +17433,20 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f1505b37895ac04bae007c10ea0d782, type: 3}
+--- !u!114 &616131483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Minimize
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: 56f54b62-165e-49c8-ac06-46be88da0eba
 --- !u!1001 &616854493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20499,20 +20555,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 898613361171425634, guid: 5579a3fae0fd3db42976874f79b5b052, type: 3}
   m_PrefabInstance: {fileID: 1451689277}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &688521933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/Slam
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: c4dfb613-f576-490c-a15a-733de0741618
 --- !u!1001 &688716000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25893,6 +25935,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5940256827095171648, guid: 2365836bf90a0714f905130407b29b33, type: 3}
   m_PrefabInstance: {fileID: 578720576}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &866092142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/ZoomOutCamera
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: de0618ec-f1a9-449b-9643-4e2e076c5ab8
 --- !u!1 &868773475 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4593907223943719382, guid: 2a037685f7a1d7a4c8a435a1c2a80ee6, type: 3}
@@ -28085,20 +28141,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 838331967671359066, guid: 2920f3ecdb3e2084ca20af919a3bd833, type: 3}
   m_PrefabInstance: {fileID: 2085632460}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &961117713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/Slam
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: c4dfb613-f576-490c-a15a-733de0741618
 --- !u!1 &964069859
 GameObject:
   m_ObjectHideFlags: 0
@@ -30871,6 +30913,20 @@ Transform:
   - {fileID: 1700901348}
   m_Father: {fileID: 214299341}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1044726165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Slam
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: c4dfb613-f576-490c-a15a-733de0741618
 --- !u!4 &1045274914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1678431657828771796, guid: 0baca433dc3a6c5429729506e9bd7f23, type: 3}
@@ -32348,6 +32404,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 838331967671359066, guid: 2920f3ecdb3e2084ca20af919a3bd833, type: 3}
   m_PrefabInstance: {fileID: 820531727}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1104432066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/ZoomOutCamera
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: de0618ec-f1a9-449b-9643-4e2e076c5ab8
 --- !u!4 &1110074604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 838331967671359066, guid: 2920f3ecdb3e2084ca20af919a3bd833, type: 3}
@@ -33523,8 +33593,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 36.7, y: -6.2}
-  m_SizeDelta: {x: 30.5042, y: 33.5308}
+  m_AnchoredPosition: {x: 45.6626, y: -6.2}
+  m_SizeDelta: {x: 48.4295, y: 33.5308}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1157021971
 MonoBehaviour:
@@ -36775,20 +36845,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 898613361171425634, guid: 5579a3fae0fd3db42976874f79b5b052, type: 3}
   m_PrefabInstance: {fileID: 1141108095}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1253193422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/Pause
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: 9ccd0f8d-a3f4-4930-b81e-eb94061e0365
 --- !u!1001 &1253501571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40539,20 +40595,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5940256827095171648, guid: 2365836bf90a0714f905130407b29b33, type: 3}
   m_PrefabInstance: {fileID: 1227484843}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1382576729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: UI/Back
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: 1b13529c-1935-4a0b-88fa-7aede3db41e6
 --- !u!4 &1384838846 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 898613361171425634, guid: 5579a3fae0fd3db42976874f79b5b052, type: 3}
@@ -202144,102 +202186,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9026652999140985140, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
   m_PrefabInstance: {fileID: 4207090134787222715}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1500888055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711563335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab09558e13881f4391b4e69fb881cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interact
-  interactID: {fileID: 1825634340}
-  currentInteraction: {fileID: 0}
-  canInteract: 0
-  whatIsBeingInteractedWith: 
---- !u!114 &1500888056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711563335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1b6f23fa5f115d4786f374a594fddfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ZoomOutCamera
-  zoomOutAction: {fileID: 476358120}
-  zoomCamera: {fileID: 985855915}
-  zoomedOutPriority: 4
---- !u!114 &1500888070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711563335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae43dbc4212005f48a2540d6f21b183f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Slam
-  slamAction: {fileID: 688521933}
---- !u!114 &1500888071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711563335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e391ae702a2c3b642b4817e6304601a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Minimize
-  minimizeAction: {fileID: 1705927216}
-  minimizeSfx: {fileID: 8300000, guid: de8a4e0d40a6eae4b917b3b6a536db60, type: 3}
-  maximizeSfx: {fileID: 8300000, guid: 11ed17edbc4cc514d879fa557ee87ea6, type: 3}
---- !u!70 &1500888085
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711563335}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
 --- !u!4 &1500894215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5940256827095171648, guid: 2365836bf90a0714f905130407b29b33, type: 3}
@@ -203428,63 +203374,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5754702970071142040, guid: a68bf23803b12c546b4a1e95ca2c7968, type: 3}
   m_PrefabInstance: {fileID: 542864233}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1536049527
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5759345852246321957, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.43689
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759345852246321957, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -23.99862
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759345852246321957, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759345852246321957, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759345852246321957, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759345852246321957, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759345852246321957, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759345852246321957, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759345852246321957, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5759345852246321957, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8406665779429892293, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
-      propertyPath: m_Name
-      value: SoundManager
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 406d482f147b94e41bd11c32013190ba, type: 3}
 --- !u!4 &1537394444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3857905669183028068, guid: e1340dbee34877b48b55fdaaf221a4b8, type: 3}
@@ -209075,20 +208964,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 898613361171425634, guid: 5579a3fae0fd3db42976874f79b5b052, type: 3}
   m_PrefabInstance: {fileID: 1428591391}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1705927216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/Minimize
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: 56f54b62-165e-49c8-ac06-46be88da0eba
 --- !u!1001 &1706091607
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -209249,6 +209124,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3305835942587803957, guid: 326518d9945eafb4d9c0ed32777b7f81, type: 3}
   m_PrefabInstance: {fileID: 1428181856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1712102839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Minimize
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: 56f54b62-165e-49c8-ac06-46be88da0eba
 --- !u!4 &1712843929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5940256827095171648, guid: 2365836bf90a0714f905130407b29b33, type: 3}
@@ -211641,7 +211530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseManager
   pauseMenuUI: {fileID: 1260866640}
-  pauseAction: {fileID: 1253193422}
+  pauseAction: {fileID: 0}
 --- !u!114 &1778879813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211654,7 +211543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8870ee432976824197c2f88a57f6e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuListManager
-  backMenuAction: {fileID: 1382576729}
+  backMenuAction: {fileID: 257186818}
   menuList: []
   mainMenu: {fileID: 1260866640}
 --- !u!114 &1778879814
@@ -212505,20 +212394,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 898613361171425634, guid: 5579a3fae0fd3db42976874f79b5b052, type: 3}
   m_PrefabInstance: {fileID: 1629985343}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1825634340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
-  m_Name: Player/Interact
-  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
-  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_ActionId: e7d22fef-aa4a-414f-947a-d9e70ccde4f3
 --- !u!1001 &1826295137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -221214,7 +221089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab09558e13881f4391b4e69fb881cd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interact
-  interactID: {fileID: 1825634340}
+  interactID: {fileID: 318654439}
   currentInteraction: {fileID: 0}
   canInteract: 0
   whatIsBeingInteractedWith: 
@@ -221230,7 +221105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b6f23fa5f115d4786f374a594fddfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZoomOutCamera
-  zoomOutAction: {fileID: 476358120}
+  zoomOutAction: {fileID: 866092142}
   zoomCamera: {fileID: 985855915}
   zoomedOutPriority: 4
 --- !u!114 &2118751131
@@ -221245,7 +221120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae43dbc4212005f48a2540d6f21b183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Slam
-  slamAction: {fileID: 961117713}
+  slamAction: {fileID: 1044726165}
 --- !u!114 &2118751132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221258,7 +221133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e391ae702a2c3b642b4817e6304601a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Minimize
-  minimizeAction: {fileID: 1705927216}
+  minimizeAction: {fileID: 616131483}
   minimizeSfx: {fileID: 8300000, guid: de8a4e0d40a6eae4b917b3b6a536db60, type: 3}
   maximizeSfx: {fileID: 8300000, guid: 11ed17edbc4cc514d879fa557ee87ea6, type: 3}
 --- !u!70 &2118751146
@@ -221872,54 +221747,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 440521517}
     m_Modifications:
-    - target: {fileID: 103681979150018904, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      propertyPath: _dashSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: 8f61df201eef8564c8e2a5b2f28edea9, type: 3}
-    - target: {fileID: 533268695171886584, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      propertyPath: _bouncyFloorSFX
-      value: 
-      objectReference: {fileID: 8300000, guid: ed4c3814de5c22a42bcb766ac173d741, type: 3}
     - target: {fileID: 1415848287212850246, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
       propertyPath: _restartAction
       value: 
       objectReference: {fileID: 926132912}
-    - target: {fileID: 1639633437881560867, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      propertyPath: _jumpSFX
+    - target: {fileID: 1467986741558817596, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
+      propertyPath: zoomCamera
       value: 
-      objectReference: {fileID: 8300000, guid: 3b14ef066dd07fe4994343ccdef2fd8c, type: 3}
+      objectReference: {fileID: 985855915}
+    - target: {fileID: 1467986741558817596, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
+      propertyPath: zoomOutAction
+      value: 
+      objectReference: {fileID: 1104432066}
     - target: {fileID: 3381058528091843237, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
       propertyPath: m_Name
       value: CharacterOne
       objectReference: {fileID: 0}
-    - target: {fileID: 3860742880754638074, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      propertyPath: _wallJumpSFX
+    - target: {fileID: 4836407055981018375, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
+      propertyPath: interactID
       value: 
-      objectReference: {fileID: 8300000, guid: 9e6e9d4bc9a968841acaece03691b6b8, type: 3}
-    - target: {fileID: 3860742880754638074, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      propertyPath: _bouncyWallSFX
+      objectReference: {fileID: 459205253}
+    - target: {fileID: 6360105763226805428, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
+      propertyPath: slamAction
       value: 
-      objectReference: {fileID: 8300000, guid: ed4c3814de5c22a42bcb766ac173d741, type: 3}
-    - target: {fileID: 3860742880754638074, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      propertyPath: wallLayer.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578840917066048233, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8578840917066048233, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      propertyPath: inputController
+      objectReference: {fileID: 374651834}
+    - target: {fileID: 7029139777821723452, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
+      propertyPath: minimizeAction
       value: 
-      objectReference: {fileID: 11400000, guid: af7ea9f10a5e642448d911228ef29212, type: 2}
-    - target: {fileID: 9026652999140985140, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9026652999140985140, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1712102839}
     - target: {fileID: 9026652999140985140, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.8
@@ -221960,26 +221815,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6044150239053245594, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3381058528091843237, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1500888055}
-    - targetCorrespondingSourceObject: {fileID: 3381058528091843237, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1500888056}
-    - targetCorrespondingSourceObject: {fileID: 3381058528091843237, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1500888070}
-    - targetCorrespondingSourceObject: {fileID: 3381058528091843237, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1500888071}
-    - targetCorrespondingSourceObject: {fileID: 3381058528091843237, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1500888085}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3e0e3bcbedea764384a8c709b1cf0d8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -221992,4 +221831,3 @@ SceneRoots:
   - {fileID: 1956755972}
   - {fileID: 1778879810}
   - {fileID: 59903512}
-  - {fileID: 1536049527}

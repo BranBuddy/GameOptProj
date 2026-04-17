@@ -21,7 +21,11 @@ GameObject:
   - component: {fileID: 1415848287212850246}
   - component: {fileID: 103681979150018904}
   - component: {fileID: 533268695171886584}
-  - component: {fileID: 6044150239053245594}
+  - component: {fileID: 4836407055981018375}
+  - component: {fileID: 1467986741558817596}
+  - component: {fileID: 6360105763226805428}
+  - component: {fileID: 7029139777821723452}
+  - component: {fileID: 591326857726606546}
   m_Layer: 0
   m_Name: CharacterOne
   m_TagString: Player
@@ -39,7 +43,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.07, y: -24.01, z: 0}
-  m_LocalScale: {x: 1, y: 1.0062, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -328,7 +332,7 @@ MonoBehaviour:
   _upwardMovementMultipiler: 1.7
   _coyoteTime: 0.2
   _jumpBufferTime: 0.2
-  _jumpSFX: {fileID: 0}
+  _jumpSFX: {fileID: 8300000, guid: 3b14ef066dd07fe4994343ccdef2fd8c, type: 3}
 --- !u!114 &3860742880754638074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,10 +349,15 @@ MonoBehaviour:
   _wallStickTime: 0.25
   _wallJumpBounce: {x: 15, y: 10}
   _wallJumpLeap: {x: 18, y: 12}
-  _wallJumpSFX: {fileID: 0}
+  _wallJumpSFX: {fileID: 8300000, guid: 9e6e9d4bc9a968841acaece03691b6b8, type: 3}
   _unjumpableWallSFX: {fileID: 0}
   _stickyWallSFX: {fileID: 0}
-  _bouncyWallSFX: {fileID: 0}
+  _bouncyWallSFX: {fileID: 8300000, guid: ed4c3814de5c22a42bcb766ac173d741, type: 3}
+  wallCoyoteTime: 0.15
+  wallCheckDistance: 0.3
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &8578840917066048233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,12 +365,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3381058528091843237}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba04e0f800f63334a924da0ff29cee73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Controller
-  inputController: {fileID: 11400000, guid: 8ccf6d08adcfd60448b501808d12d39f, type: 2}
+  inputController: {fileID: 11400000, guid: af7ea9f10a5e642448d911228ef29212, type: 2}
 --- !u!114 &1415848287212850246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Dash
   _dashSpeed: 10
   _dashDuration: 0.2
-  _dashSFX: {fileID: 0}
+  _dashSFX: {fileID: 8300000, guid: 8f61df201eef8564c8e2a5b2f28edea9, type: 3}
 --- !u!114 &533268695171886584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,9 +416,68 @@ MonoBehaviour:
   _stickyFriction: 1
   _bouncyJumpMultiplier: 3
   _stickyFloorSFX: {fileID: 0}
-  _bouncyFloorSFX: {fileID: 0}
---- !u!58 &6044150239053245594
-CircleCollider2D:
+  _bouncyFloorSFX: {fileID: 8300000, guid: ed4c3814de5c22a42bcb766ac173d741, type: 3}
+--- !u!114 &4836407055981018375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381058528091843237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab09558e13881f4391b4e69fb881cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interact
+  interactID: {fileID: 0}
+  currentInteraction: {fileID: 0}
+  canInteract: 0
+  whatIsBeingInteractedWith: 
+--- !u!114 &1467986741558817596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381058528091843237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b6f23fa5f115d4786f374a594fddfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZoomOutCamera
+  zoomOutAction: {fileID: 0}
+  zoomCamera: {fileID: 0}
+  zoomedOutPriority: 4
+--- !u!114 &6360105763226805428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381058528091843237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae43dbc4212005f48a2540d6f21b183f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Slam
+  slamAction: {fileID: 0}
+--- !u!114 &7029139777821723452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3381058528091843237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e391ae702a2c3b642b4817e6304601a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Minimize
+  minimizeAction: {fileID: 0}
+  minimizeSfx: {fileID: 8300000, guid: de8a4e0d40a6eae4b917b3b6a536db60, type: 3}
+  maximizeSfx: {fileID: 8300000, guid: 11ed17edbc4cc514d879fa557ee87ea6, type: 3}
+--- !u!70 &591326857726606546
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -443,4 +511,5 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1}
+  m_Direction: 0
